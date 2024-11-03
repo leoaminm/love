@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friendship Proposal</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .container {
+            max-width: 1000px;
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .anime-image {
+            width: 600px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 0 20px #ff69b4;
+        }
+
+        .message {
+            font-size: 24px;
+            margin: 30px auto;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 0 20px #ff69b4;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .heart {
+            position: absolute;
+            color: pink;
+            font-size: 24px;
+            animation: floatUp 6s linear infinite;
+            left: 0;
+            bottom: -20px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .buttons {
+            margin-top: 30px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .btn {
+            padding: 10px 30px;
+            font-size: 18px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            background-color: #ff69b4;
+            color: white;
+            transition: transform 0.3s;
+            box-shadow: 0 0 15px #ff69b4;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://wallpapers.com/images/high/anohana-background-a2jc5g9kkv471ss1.webp" alt="Romantic Anime" class="anime-image">
+        
+
+        <div class="message">
+            سلام من از شما خیلی خیلی خوشم اومده متاسفانه چون رابطه ای نداشتم نمیدونم چطوری باید همچین چیزیو گفت اما خب این بهترین کاریه که میتونم بکنم اگه دوست داشتیت میتونید بله رو بزنید تا بیشتر صحبت کنیم
+        </div>
+
+        <div class="buttons">
+            <button class="btn" onclick="alert ('واقعا خوشحالممم خیلی ممنون میشم بیشتر با هم صحبت کنیم این شماره تلفن واتساپمه 09399335601')">بله</button>
+            <button class="btn" onclick="alert ('leoaminm باهام صحبت کن شاید خوشت اومدایدی اینستامه')">خیر</button>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '♥';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 4 + 3 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 100);
+    </script>
+</body>
+</html>
